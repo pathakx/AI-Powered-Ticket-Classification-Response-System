@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Ticket Classification & Analytics System</title>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>🎫 AI-Powered Ticket Classification System</h1>
+    <p class="subtitle">Industry-level semantic grouping & automated response generation using Gemini AI</p>
+
+    <div class="main-grid">
+<!-- Configuration -->
+<div class="card">
+  <h2>Configuration</h2>
+  <div class="form-group">
+    <label for="apiKey">Gemini API Key</label>
+    <div class="api-key-wrapper">
+      <input
+        type="password"
+        id="apiKey"
+        class="api-key-input"
+        placeholder="Enter your Gemini API key"
+      />
+      <button id="toggleKeyBtn" type="button" class="btn btn-secondary">
+        Show
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+
+      <!-- Add Tickets -->
+      <div class="card">
+        <h2>Add Tickets</h2>
+        <div class="ticket-input">
+          <input type="text" id="ticketInput" placeholder="Enter a support ticket...">
+          <button class="btn btn-primary" onclick="addTicket()">Add</button>
+        </div>
+        <div class="ticket-list" id="ticketList">
+          <p style="color: var(--color-text-secondary); font-size: 12px;">No additional tickets added</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sample Tickets -->
+    <div class="card">
+      <h2>Sample Tickets (Pre-loaded)</h2>
+      <div id="sampleTickets">
+        <div class="ticket-item"><span class="ticket-item-text">I forgot my password, how to reset it?</span></div>
+        <div class="ticket-item"><span class="ticket-item-text">I can't log in, as password is incorrect.</span></div>
+        <div class="ticket-item"><span class="ticket-item-text">How to see leave balance?</span></div>
+      </div>
+      <button class="btn btn-primary" style="margin-top: 16px;" onclick="analyzeTickets()">🚀 Classify & Generate Responses</button>
+    </div>
+
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p>Analyzing tickets with Gemini AI...</p>
+    </div>
+
+    <div id="error"></div>
+
+    <!-- Analytics Dashboard -->
+    <div class="analytics-dashboard" id="analyticsDashboard" style="display: none;">
+      <h2 style="font-size: var(--font-size-2xl); margin-bottom: var(--space-16);">📈 Historical Analytics & Trends</h2>
+      <div class="chart-container">
+        <div class="chart-header">
+          <h3 class="chart-title">Ticket Volume Over Time</h3>
+          <div class="time-filter">
+            <button class="active" onclick="changeTimeRange('24h', event)">24H</button>
+            <button onclick="changeTimeRange('7d', event)">7D</button>
+            <button onclick="changeTimeRange('30d', event)">30D</button>
+            <button onclick="changeTimeRange('90d', event)">90D</button>
+          </div>
+        </div>
+        <canvas id="volumeChart" class="chart-canvas"></canvas>
+      </div>
+
+      <div class="insights-grid" id="insightsGrid"></div>
+
+      <div class="chart-container">
+        <div class="chart-header">
+          <h3 class="chart-title">Category Distribution Trends</h3>
+        </div>
+        <canvas id="categoryChart" class="chart-canvas"></canvas>
+      </div>
+
+      <div class="chart-container">
+        <div class="chart-header">
+          <h3 class="chart-title">Priority Distribution Over Time</h3>
+        </div>
+        <canvas id="priorityChart" class="chart-canvas"></canvas>
+      </div>
+    </div>
+
+    <!-- Clustered Results -->
+    <div class="analysis-section" id="analysisSection" style="display: none;">
+      <div class="stats" id="stats"></div>
+      <h2 style="margin-bottom: 20px;">📊 Clustered Tickets & AI Responses</h2>
+      <div class="cluster-grid" id="clusterGrid"></div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="scripts.js"></script>
+
+</body>
+</html>
