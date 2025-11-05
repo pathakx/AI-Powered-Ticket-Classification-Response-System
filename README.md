@@ -42,10 +42,7 @@ cd AI-Powered-Ticket-Classification-Response-System
 
 Open index.html in your browser
 
-```
-npm install
-npm run dev
-```
+
 🔑 Gemini API Configuration
 
 Go to Google AI Studio
