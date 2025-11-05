@@ -34,8 +34,8 @@ User Tickets → Gemini API → JSON Classification → Frontend UI → Analytic
 
 ### 🧩 1. Clone Project
 ```bash
-git clone https://github.com/yourusername/ai-ticket-system.git
-cd ai-ticket-system
+git clone https://github.com/pathakx/AI-Powered-Ticket-Classification-Response-System.git
+cd AI-Powered-Ticket-Classification-Response-System
 ```
 
 🧱 2. Run Locally
